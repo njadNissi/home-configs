@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# But not these files...
+!quick/
+!*.vimrc
+!*.vim
+!*.bashrc_bkp
+!*.bash_aliases
+!*.gitignore
+!requirements.txt
+!cmds.txt
+!*.profile
+!*.vscode
+!*.ideavimrc
+!*.viminfo
+!README.md

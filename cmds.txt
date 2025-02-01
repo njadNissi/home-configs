@@ -1,0 +1,101 @@
+
+
+grep */ : show only directories:
+apt-get (--purge) remove pkgname: [--purge for completely]
+tail -f file: watchg changes in file in real-time
+nmap -F xxx.xxx.xxx.xxx-xxx: scan available devices IP and Ports
+tar -xf file_url.tar : extract .tar
+sudo rm -rf /opt/folder_name : remove recursively files then delete folder in /opt/
+export EDITOR=vim
+scp file_url pi@$rasp:dest_url    # shell copy, rasp=192.168.1.143
+ssh [-p port!=22] pi@$rasp # connect to ssh of $rasp is the ip_addr for the env var
+top or htop or btop : task managers
+killall process_name
+nmtui : network manager text-user interface
+amixer -D pulse sset Master 5%+ : increase volume by 5%
+--------------------------connect bluetooth---------------
+hcitool : identify your computer bluetOoth
+hcitool -i hci0 scan: scan available devices
+bluetoothct1 : trust the device
+connect FC:XX:XX:XX:XXFE    : connect to the device
+-----------------------------------------------------------
+sudo mkdir /media/user-name/mount-target
+sudo (u)mount /dev/sdaX /media/user-name/mount-target
+df: // devices files
+~/reset_idea.sh  : this shell script contains the code to reset the 30 trial days of idea for linux and macos(macos line is commented) 
+
+sudo ln -sf /opt/sts/SpringToolSuite4 /usr/bin : create a terminal launcher for a software. s->makes symbolic links. f->remoevs existing entries. SpringTooolSuite4->launcher name from the source folder
+
+sudo nano /usr/share/applications/SpringToolSuite4.desktop : create a .desktop file so that it will appear in the launchpad. chk content in...
+
+sudo woeusb --device Windows.iso /dev/sdX
+esptool.py -c esp32 -p /dev/ttyACM0 erase_flash: burning for the very first time
+esptool.py -c esp32 -p /dev/ttyACM0 -b 115200 write_flash 0x1000 <esp32-X.bin>: burning for other times
+
+---------------------GIT-----------------------------
+git clone -b <branch-name> <url> # clone specific branch
+git branch -r # view all the remote tracking branches
+git checkout <branch-name> ===> simpler is: git switch <branch-name>
+
+git fetch <remote-name> <branch-name> <===>git fetch origin feature/new-feature # download changes from remote
+
+git merge: merge the changes from remote on your local
+git rebase: correct history on local based on remote
+git pull : git fetch + git merge
+git status # Verify local changes.
+pdftk a.pdf b.pdf c.pdf cat output d.pdf
+
+:%/<old_string>/<new_string>/g : find and replace by vim
+
+------------------SSH---------------
+ssh-keygen: generate a new key [makesure you don't accidently override]
+ssh-keygen -t ed25519 -C "buanya": more secure and shorter key
+ssh-copy-id -i <path-to-id_rsa.pub> username@address:add the id_rsa.pub to server in one line
+eval "$(ssh-agent): on servers w/o gui, agent is not active by default. it helps remember the ssh passphrase once for the whole session"
+ps aux |grep ssh-agent: check the ssh-agent pid
+
+sshd: sshdaemon -> accepts connections from clients
+systemctl [start|restart|stop] ssh(d)
+/etc/ssh[d]/ssh_config: all configs for clients {port no, passphrase enabling, etc...}
+journalctl -[f]u ssh[d]: follow the ssh connections attemps
+
+
+> Flathub Apps Installation(Wechat, QQ, Dingtalk)
+> flatpak install flathub com.tencent.WeChat
+> flatpak run com.tencent.WeChat
+> visit: https://flathub.org/zh-Hans
+
+git reflog  # Find the commit hash before the pull
+git reset --hard <commit-hash>  # Reset to the previous state
+
+
+git branch -vv  : Checking the upstream branch and current commit.
+git remote -vv  : checking repo(origin) informations
+
+du -sh /path/to/folder: display folder size in human readable folders
+
+find /path/to/your/folder -type f | wc -l : check folder num of files
+
+
+[pypi]
+python3 setup.py sdist bdist_wheel: generate dist files
+twine upload dist/*: upload the library
+
+solve read-only flash-disk drive:
+sudo su -
+unmount the mounting_point
+dosfsck drive_name
+du -sh path  ==> see size in human readable form
+df -h ====> show size of partitions in disks
+tar -cvzf zipped_folder.tar.gz path_to_folder --exclude=zipped_folder
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+# latest compatible nvidia drivers installed (up to this point libraries have just been added),
+sudo dkms build nvidia/550.127.08 # build the new libraries
+sudo dkms install nvidia/550.127.08 --force # install the driver
+then follow installation process from tensorflow.org and pytorch.org
+nmap -sP 192.168.229.*
+arduino-cli monitor -p /dev/ttyACM0 -b arduino:avr:uno --flush
+-----
+mosquitto_sub -t "test" -u "<username>" -P "<userpassword>"
+mosquitto _pub -t "test" -m "message from mosquitto_pub client" -u "<username>" -P "<password>"

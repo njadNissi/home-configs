@@ -1,0 +1,13 @@
+alias setup_ask='/media/njad/NJAD/coding/Python/Projects/njad-term-genai/setup_and_run.sh'
+alias ask='export https_proxy=http://localhost:7890 && conda activate genaiterm_env && python /home/njad/quick/ask.py'
+alias readserial='/home/njad/quick/readserial.sh'
+alias cmds='vim ~/cmds.txt'
+alias vpn='export http_proxy=http://localhost:7890; export https_proxy=http://localhost:7890'
+alias novpn='unset http_proxy; unset https_proxy'
+alias vpn-update='/home/njad/quick/apt_update_via_proxy.sh'
+alias cptoserver='~/quick/toserver.sh'
+alias cntoserver='~/quick/serverjupyter.sh'
+alias rnjad='wmbranham'
+alias arduino='/home/njad/.arduinoIDE/arduino-ide_2.3.4_Linux_64bit.AppImage --no-sandbox &'
+alias fritzing='./setups/fritzing-1.0.2-l1901-dbdbe34c-qt6.AppImage &'
+alias wechat="wine ~/.wine/drive_c/'Program Files'/Tencent/wechat/Wechat.exe"
