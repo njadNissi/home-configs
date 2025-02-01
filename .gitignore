@@ -3,6 +3,7 @@
 
 # But not these files...
 !quick/
+!quick/*
 !*.vimrc
 !*.vim
 !*.bashrc_bkp
